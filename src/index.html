@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue源码分析</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="message">
+    {{message}}
+  </div>
+  <script>
+  window.batcher = null;
+  </script>
+  <script src="./js/batcher.js"></script>
+  <script src="./js/dep.js"></script>
+  <script src="./js/observer.js"></script>
+  <script src="./js/watcher.js"></script>
+  <script src="./js/compile.js"></script>
+  <script src="./js/vmmv.js"></script>
+  <script>
+    const vm = new Vue({
+      el: 'app',
+      data: {
+        message: 'hello vue'
+      }
+    });
+    console.log(vm);
+  </script>
+</body>
+</html>
